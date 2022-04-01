@@ -33,9 +33,9 @@ string reverseWord(string str){
  int n=str.length();
 char temp;
  for(int i=0;i<n/2;i++){
-     swap(str[i],str[n-i-1]);
-    /* temp=str[i];
+    swap(str[i],str[n-i-1]);
+   /*  temp=str[i];
     str[i]=str[n-1];
-     str[n]=temp;*/
+     str[n-1]=temp;*/
 }return str;
 }
