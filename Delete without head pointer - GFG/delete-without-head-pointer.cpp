@@ -85,7 +85,7 @@ class Solution
        Node *temp=del->next;
        del->data=temp->data;
        del->next=temp->next;
-      temp->next=NULL;
+     // temp->next=NULL;
        delete temp;
     }
     
