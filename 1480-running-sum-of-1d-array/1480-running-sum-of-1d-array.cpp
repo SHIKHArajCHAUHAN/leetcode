@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> runningSum(vector<int>& nums) {
-        int a=0,b,c;
+        int a=0;
         vector<int>ans;
         for(int i=0;i<nums.size();i++)
         {
