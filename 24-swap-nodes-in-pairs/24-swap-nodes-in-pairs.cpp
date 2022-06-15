@@ -11,7 +11,18 @@
 class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {
-        vector<int>ans;
+        if(head==NULL||head->next==NULL) return head;
+        ListNode *p=head,*q=head->next;
+        while(q->next!=NULL&&q->next->next!=NULL)
+        {
+            swap(p->val,q->val);
+            p=p->next->next;
+            q=q->next->next;
+        }            
+        swap(p->val,q->val);
+
+        return head;
+     /*   vector<int>ans;
         ListNode *p=head;
         if(head==NULL||head->next==NULL) return head;
         while(p!=NULL)
@@ -29,6 +40,7 @@ public:
            p->val=ans[i];
             p=p->next;
         }
-        return head;
+        return head;*/
+        
     }
 };
