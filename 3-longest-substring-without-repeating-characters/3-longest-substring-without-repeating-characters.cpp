@@ -6,7 +6,7 @@ public:
         for(int i=0;i<s.length();i++)
         {
 
-            vector<bool>ans(256);
+            vector<bool>ans(259);
             for( int j=i;j<s.length();j++){
             if(ans[s[j]]==true)
             break;   
