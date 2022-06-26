@@ -4,9 +4,9 @@ public:
        int n=arr.size();
         int count=0;
         vector<int>res(n+1,0);
-        for(int i=1;i<=n;i++)
+       for(int i=0;i<n;i++)
         {
-            res[i]=arr[i-1]^res[i-1];
+            res[i+1]=arr[i]^res[i];
         }
         for(int i=1;i<=n;i++)
 
