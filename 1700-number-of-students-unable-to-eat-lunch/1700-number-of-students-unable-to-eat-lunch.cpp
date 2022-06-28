@@ -22,7 +22,7 @@ public:
                 q.pop();
             }
             count++;
-            if(count>10000)
+            if(count>1000)
             break;
             
         }
