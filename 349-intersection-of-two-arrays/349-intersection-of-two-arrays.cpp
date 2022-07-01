@@ -15,7 +15,7 @@ public:
         }
         vector<int>::iterator i;
         sort(ans.begin(),ans.end());
-        i=std::unique(ans.begin(),ans.begin()+ans.size());
+        i=std::unique(ans.begin(),ans.end());
 
           ans.resize(std::distance(ans.begin(),i));  
       return ans;      
