@@ -17,16 +17,17 @@ public:
         int ans;
         while(!q.empty())
         {
-            vector<TreeNode*>level;
+          //  vector<TreeNode*>level;
             int n=q.size();
             for(int i=0;i<n;i++)
             {
                 auto now=q.front(); q.pop();
-                level.push_back(now);
+               // level.push_back(now);
+                if(i==0) ans=now->val;
                 if(now->left){q.push(now->left);}
                 if(now->right){q.push(now->right);}
             }
-            ans=level[0]->val;
+        
             
         }
         return ans;
