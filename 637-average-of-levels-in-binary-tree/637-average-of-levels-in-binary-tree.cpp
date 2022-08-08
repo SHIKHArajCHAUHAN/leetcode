@@ -19,18 +19,16 @@ public:
         while(!q.empty())
         {
            int n = q.size();
-            vector<int> level;
+            double sum=0;
+//vector<int> level;
             for(int i=0; i<n; i++)
             {
                 auto now = q.front();
                 q.pop();
-                level.push_back(now->val);
+                sum+=now->val;
+             
                 if(now->left) q.push(now->left);
                 if(now->right) q.push(now->right);
-            }double sum=0;
-            for(int i=0;i<n;i++)
-            {
-                sum+=level[i];
             }
             v.push_back(sum/n);
             
