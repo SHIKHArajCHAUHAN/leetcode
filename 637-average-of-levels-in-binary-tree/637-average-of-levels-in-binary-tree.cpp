@@ -18,7 +18,7 @@ public:
         q.push(root);
         while(!q.empty())
         {
-           int n = q.size();
+           double n = q.size();
             double sum=0;
 //vector<int> level;
             for(int i=0; i<n; i++)
