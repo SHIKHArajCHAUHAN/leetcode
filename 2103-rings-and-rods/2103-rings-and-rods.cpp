@@ -6,7 +6,7 @@ public:
         map<int,set<char>>mp;
             for(int i=1;i<n;i+=2)
             {
-            mp[rings[i]-'0'].insert(rings[i-1]);
+            mp[rings[i]].insert(rings[i-1]);
             }
         for(auto i:mp)
         {
