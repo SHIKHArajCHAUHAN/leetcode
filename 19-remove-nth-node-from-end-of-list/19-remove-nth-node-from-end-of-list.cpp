@@ -29,6 +29,7 @@ public:
             head1=head1->next;
         }
         node=node-n;
+        //delete at first;
         if(node==0)
         {
             ListNode*ptr=head;
