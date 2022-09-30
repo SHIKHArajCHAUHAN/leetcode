@@ -8,11 +8,7 @@ public:
    
     int ping(int t) {
       //  q.push(t);
-        if(t<3000)
-        {
-            q.push(t);
-            return q.size();
-        }
+        
         q.push(t);
       while(q.front()<t-3000)
       {
