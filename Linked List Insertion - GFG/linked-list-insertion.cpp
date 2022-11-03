@@ -1,4 +1,4 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h> 
 using namespace std; 
 
@@ -23,7 +23,7 @@ void printList(Node* node)
 
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 /*Structure of the linked list node is as
 struct Node {
   int data;
@@ -39,42 +39,32 @@ class Solution{
     //Function to insert a node at the beginning of the linked list.
     Node *insertAtBegining(Node *head, int x) {
        // Your code here
-        Node*temp=new Node(x);
-       if(head==NULL){
-           return temp;
-       }
-       else{
-       temp->next=head;
-       return temp;}
-      
+       Node* node=new Node(x);
+       if(head==NULL) return node;
+       node->next=head;
+       return node;
     }
     
     
     //Function to insert a node at the end of the linked list.
     Node *insertAtEnd(Node *head, int x)  {
        // Your code here
-           Node *temp=new Node(x);
-           if(head==NULL){
-           return temp;
-       }
-       if(head->next==NULL)
-       {head->next=temp;
-       temp->next=NULL;
-       return head;}
-       
+        Node* node=new Node(x);
+        if(head==NULL) return node;
+        Node* nod=head;
+        while(nod->next!=NULL){
+            nod=nod->next;
+        }
+        nod->next=node;
+        node->next=NULL;
     
-    Node *curr=head;
-    while(curr->next!=NULL){
-     curr= curr->next;}
-     curr->next=temp;
-      temp->next=NULL;
-      return head;
-}  
     
+        return head;
+    }
 };
 
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 int main() 
 { 
     int t;
@@ -100,4 +90,5 @@ int main()
     return 0; 
 } 
 
-  // } Driver Code Ends
+
+// } Driver Code Ends
