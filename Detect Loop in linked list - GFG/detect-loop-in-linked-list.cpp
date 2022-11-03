@@ -1,4 +1,4 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 //Initial template code for C++
 
 #include <bits/stdc++.h>
@@ -27,7 +27,7 @@ void loopHere(Node* head, Node* tail, int position)
 }
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template for C++
 
 /*
@@ -48,20 +48,23 @@ class Solution
     //Function to check if the linked list has a loop.
     bool detectLoop(Node* head)
     {
-        Node *fast=head;
+        // your code here
+       // if(head==NULL) return true;
         Node *slow=head;
-        while(fast!=NULL&&fast->next!=NULL){
+        Node *fast=head;
+        while(fast!=NULL&&fast->next!=NULL)
+        {
             slow=slow->next;
             fast=fast->next->next;
-            if(slow==fast)
-            return true;
+        
+        if(slow==fast) return true;
         }
-        return false;
+     return false;
     }
 };
 
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 int main()
 {
@@ -95,4 +98,5 @@ int main()
     }
 	return 0;
 }
-  // } Driver Code Ends
+
+// } Driver Code Ends
