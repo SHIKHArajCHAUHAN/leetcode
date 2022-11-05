@@ -101,24 +101,28 @@ struct Node {
 */
 class Solution{
     public:
-     bool findSymmetric(Node* lt, Node* rt){
-        if(lt == NULL && rt == NULL){
-            return true;
-        }
-        if(lt == NULL || rt == NULL){
-            return false;
-        }
-        if(lt->data != rt->data){
-            return false;
-        }
-        return findSymmetric(lt->left, rt->right) && findSymmetric(lt->right, rt->left);
+      bool isIdentical(Node *r1, Node *r2)
+    {
+        //Your Code here
+        if(r1==NULL&&r2==NULL) return true;
+        else if(r1==NULL||r2==NULL) return false;
+        //else if(r2&&r1==NULL) return false;
+        else {
+            bool c1= r1->data==r2->data;
+            bool c2=isIdentical(r1->right,r2->left);
+            bool c3=isIdentical(r1->left,r2->right);
+        
+        if(c1&&c2&& c3) return true;}
+        return false;
     }
+    // return true/false denoting whether the tree is Symmetric or not
     bool isSymmetric(struct Node* root)
     {
-	    if(root == NULL){
-	        return true;
-	    }
-	    return findSymmetric(root->left, root->right);
+	    // Code here
+	    if(root==NULL)
+	    return true;
+	    return isIdentical(root->left,root->right);
+	    
     }
 };
 
