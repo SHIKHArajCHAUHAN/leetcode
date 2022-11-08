@@ -2,7 +2,7 @@ class Solution {
 public:
     string makeGood(string s) {
        stack<char>c;
-        string ankit;
+        string str;
         for(int i=0;i<s.length();i++)
         {
             if(c.empty())
@@ -11,8 +11,6 @@ public:
             }
             else
             {
-                //mummyy h
-                //muhh m kuchh thuns diya h....sry ankit 2 min
                 if(abs(c.top()-s[i])==32)
                    {
                        c.pop();
@@ -26,9 +24,9 @@ public:
         }
                    while(!c.empty())
                    {
-                       ankit+=c.top();
+                       str+=c.top();
                        c.pop();
-                   } reverse(ankit.begin(),ankit.end());
-                   return ankit;
+                   } reverse(str.begin(),str.end());
+                   return str;
     }
 };
