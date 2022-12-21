@@ -23,15 +23,15 @@ class Solution
        {
            if((N&1)!=0) 
            {cnt++;
-            N=N>>1;
+        
            }
            else
            {
                maxx=max(maxx,cnt);
                cnt=0;
-                N=N>>1;
+                
            }
-          
+           N=N>>1;
            maxx=max(maxx,cnt);
        }
        return maxx;
