@@ -48,8 +48,8 @@ class Solution{
 public:
     Node* sortList(Node* head)
     {
-        // Your Code Here
-        Node *temp=head;
+        // Your Code Here                                   o(n) and space 0(n)
+      /*  Node *temp=head;
         vector<int>v;
         while(temp)
         {
@@ -62,6 +62,41 @@ public:
        {
            temp2->data=v[i];
            temp2=temp2->next;
+       }
+       return head;*/
+       ///********************for reverse
+     /*  Node *cur=head;
+       Node *prev=NULL;
+       Node *nxt=NULL;
+       while(cur)
+       {
+           
+          nxt= cur->next;
+          cur->next=prev;
+          prev=cur;
+          cur=nxt;
+       }
+       return prev;*/////////////////////////////////////
+       //sort inplace*******************************************point to remember**********o(n),o(1)
+        Node *cur=head->next;
+       Node *prev=head;
+       Node *nxt=NULL;
+       while(cur)
+       {
+           if(cur->data<0)//-ve k liy lekin +ve k liy sort krne ki jrurt nhi
+           {
+              nxt=cur->next;// y ptr bdhane k liy nxt=-2
+              cur->next=head; 
+              prev->next=nxt;
+              head=cur;
+              cur=nxt;
+              
+           }
+           else
+           {
+               cur=cur->next;
+               prev=prev->next;
+           }
        }
        return head;
     }
