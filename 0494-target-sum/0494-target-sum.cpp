@@ -2,7 +2,7 @@ class Solution {
 public:
     int subset(vector<int>num,int sum)
     {
-        int v[21][10001];
+        int v[num.size()+1][sum+1];
         for(int i=0;i<num.size()+1;i++)
         {
             for(int j=0;j<sum+1;j++)
