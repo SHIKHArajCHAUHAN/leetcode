@@ -22,11 +22,9 @@ class Solution{
 	        
 	        long double ratio=pq.top().first;
 	        pq.pop();
-	        
 	        long long x=sqrt(weight);
 	        if(x*x==weight)
 	         continue;
-	        
 	        if( C > weight){
 	            TotalProfit +=  double(profit);
 	            C  -= weight;
