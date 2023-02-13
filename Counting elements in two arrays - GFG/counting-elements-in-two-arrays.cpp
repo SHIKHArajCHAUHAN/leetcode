@@ -21,8 +21,24 @@ class Solution{
     sort(arr2,arr2+n);
     for(int i=0;i<m;i++)
     {
-        int cnt = upper_bound(arr2,arr2+n,arr1[i])-arr2;
-        v.push_back(cnt);
+        /*int cnt = upper_bound(arr2,arr2+n,arr1[i])-arr2;
+        v.push_back(cnt);*/
+        int l=0;
+        int h=n-1;
+        while(l<=h)
+        {
+            int mid=(l+h)/2;
+            if(arr2[mid]<=arr1[i])
+            {
+                l=mid+1;
+                
+            }
+            else
+            {
+                h=mid-1;
+            }
+        }
+        v.push_back(l);
     }
     return v;
     }
