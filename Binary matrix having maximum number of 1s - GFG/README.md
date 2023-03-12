@@ -39,5 +39,5 @@ You don't need to read input or print anything. The task is to complete the func
 
 <p><span style="font-size:18px"><strong>Constraints:</strong><br>
 1 &lt;= N&nbsp;&lt;= 10</span><sup><span style="font-size:15px">3</span></sup><br>
-<span style="font-size:18px">1 &lt;= mat[][]&lt;= 10<sup>6</sup></span></p>
+<span style="font-size:18px">0 &lt;= mat[][]&lt;= 1</span></p>
 </div>
