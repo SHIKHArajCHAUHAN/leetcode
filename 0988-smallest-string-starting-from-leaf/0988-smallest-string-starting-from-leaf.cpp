@@ -17,7 +17,7 @@ public:
         if(root==NULL)return;
         str.push_back((root->val)+'a');
         if(root->left==NULL&&root->right==NULL)
-        { string s=str;
+        { 
            reverse(str.begin(),str.end());
           store.push_back(str);return;
         }
