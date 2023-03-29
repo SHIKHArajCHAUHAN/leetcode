@@ -8,7 +8,7 @@ public:
         for(int i=0;i<satisfaction.size();i++)
         {
             //int x=0;
-            x=x+satisfaction[i]+sum;
+            x=x+satisfaction[i]+sum;// 
             sum+=satisfaction[i];
             maxx=max(maxx,x);
         }
