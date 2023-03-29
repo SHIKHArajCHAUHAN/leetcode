@@ -12,16 +12,26 @@ class Solution
     {
         // code here
             int cnt = 0;
-    unordered_map<int, int> mp;
-    mp[0] = 1;
-    int diff = 0;
-    for (int i = 0; i < S.length(); i++) {
-        char c = S[i];
-        diff += isupper(c) ? 1 : -1;
-        if (mp.find(diff)!=mp.end()) {
-            cnt += mp[diff];
-        }
-        mp[diff]++;
+    // unordered_map<int, int> mp;
+    // mp[0] = 1;
+    // int diff = 0;
+    // for (int i = 0; i < S.length(); i++) {
+    //     char c = S[i];
+    //     diff += isupper(c) ? 1 : -1;
+    //     if (mp.find(diff)!=mp.end()) {
+    //         cnt += mp[diff];
+    //     }
+    //     mp[diff]++;
+    // }
+    for(int i=0;i<S.length();i++)
+    {
+        int low=0,high=0;
+        for(int j=i;j<S.length();j++)
+        {
+            if(S[j]>='a'&&S[j]<='z')low++;
+              if(S[j]>='A'&&S[j]<='Z')high++;
+              if(low==high) cnt++;
+        }  //if(low==high) cnt++;
     }
     return cnt;
 
