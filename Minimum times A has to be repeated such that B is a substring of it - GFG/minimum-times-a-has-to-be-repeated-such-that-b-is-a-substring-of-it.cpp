@@ -10,16 +10,14 @@ class Solution {
   public:
     int minRepeats(string A, string B) {
         // code here
-        string temp=A;
-        int cnt=1;
-        while(A.length()<B.length())
-        {
-           A+=temp;
-           cnt++;}
-           if(A.find(B)!=-1) return cnt;
-           A+=temp;
-           cnt++;
-           if(A.find(B)!=-1) return cnt;
+             if(B==A)return 1;
+        int ans=1;
+        string str=A;
+        while(A.length()<=B.length()){
+            A+=str;
+            ans++;
+            if(A.find(B)!=string::npos)return ans;
+        }
         return -1;
     }
 };
