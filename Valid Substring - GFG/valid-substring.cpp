@@ -28,7 +28,7 @@ class Solution {
 
         int maxx=0,cnt=0;
 
-        for(int i=n-1;i>=0;)
+        for(int i=n-1;i>=0;i--)
         {
             if(s[i]=='x')
             {
@@ -38,12 +38,9 @@ class Solution {
                     cnt++;
                     i--;
                 }
-                i--;
+            
             }
-            else 
-            {
-                i--;
-            }
+           
             
             if(maxx<cnt)
             maxx=cnt;
