@@ -1,50 +1,38 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 // Initial template for C++
 
 #include <bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
+// } Driver Code Ends
 // User function template in C++
 
 class Solution {
   public:
     // Function to return the position of the first repeating element.
     int firstRepeated(int arr[], int n) {
-        
-/*for(int i=0;i<n;i++){
-    for(int j=i+1;j<n-1;j++){
-        if(arr[i]==arr[j])
-        return i+1;
-
-    }
-}*/int max = 0;
-    for (int x = 0; x < n; x++) {
-        if (arr[x] > max) {
-            max = arr[x];
+        // code here
+        map<int,int>mp;
+vector<int>ans;
+        for(int i=0;i<n;i++)
+        mp[arr[i]]++;
+        for(int i=0;i<n;i++)
+        {
+            if(mp[arr[i]]>1)
+            {
+                ans.push_back(i+1);
+            }
+            
         }
-    }
-    int temp[max + 1];
- 
-    for (int i = 0; i < max + 1; i++)
-        temp[i] = 0;
- 
-    for (int x = 0; x < n; x++) {
-        int num = arr[x];
-        temp[num]++;
-    }
- 
-    for (int x = 0; x < n; x++) {
-        int num = arr[x];
-        if (temp[num] > 1) {
-            return x+1;
+        for(auto i: ans)
+        {
+            return i;
         }
-    }
-return -1;
+        if(ans.size()==0) return -1;
     }
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 int main() {
 
     int t;
@@ -63,4 +51,5 @@ int main() {
 
     return 0;
 }
-  // } Driver Code Ends
+
+// } Driver Code Ends
