@@ -1,10 +1,11 @@
 # Wave Array
-## Easy 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given a sorted array <strong>arr[]</strong>&nbsp;of distinct integers. Sort the array into a wave-like array and return it<br>
+## Easy
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a <strong>sorted</strong> array <strong>arr[]</strong>&nbsp;of distinct integers. Sort the array into a wave-like array(In Place).<br>
 In other words, arrange the elements into a sequence such that arr[1] &gt;= arr[2] &lt;= arr[3] &gt;= arr[4] &lt;= arr[5].....</span></p>
 
 <p><span style="font-size:18px">If there are multiple solutions, find the lexicographically smallest one.</span></p>
+
+<p><span style="font-size:18px"><strong>Note:</strong>The given array is sorted in ascending order, and you don't need to return anything to make changes in the original array itself.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
@@ -35,5 +36,4 @@ The task is to complete the function <strong>convertToWave</strong>(), which con
 <p><span style="font-size:18px"><strong>Constraints:</strong><br>
 1 ≤ n&nbsp;≤ 10<sup>6</sup><br>
 0 ≤ arr[i] ≤10<sup>7</sup></span></p>
- <p></p>
-            </div>
+</div>
