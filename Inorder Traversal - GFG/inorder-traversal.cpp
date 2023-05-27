@@ -1,4 +1,4 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -15,7 +15,7 @@ struct Node {
 };
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 /* A binary tree node has data, pointer to left child
    and a pointer to right child
 struct Node {
@@ -32,25 +32,34 @@ struct Node {
 class Solution {
   public:
     // Function to return a list containing the inorder traversal of the tree.
-   void inOrder(Node* root, vector<int> &ans) {
+    vector<int> inOrder(Node* root) {
         // Your code here
-       
-       if(root== NULL) return  ;
-       inOrder(root->left,ans);
-       ans.push_back(root->data);
-       inOrder(root->right,ans);
-       
+        stack<Node*>st;
+        vector<int>inorder;
+        while(1)
+        {
+            if(root!=nullptr)
+            {
+                
+                st.push(root);
+                root=root->left;
+            }
+            else
+            {
+                if(st.empty())break;
+                root=st.top();
+                st.pop();
+                inorder.push_back(root->data);
+                root=root->right;
+            }
+        
+        }
+        return inorder;
+        
     }
-    public:
-    vector<int> inOrder( struct Node* root){
-        vector<int> ans;
-        inOrder(root,ans);
-        return ans;
-    }
-    
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 // Function to Build Tree
 Node* buildTree(string str) {
@@ -129,4 +138,5 @@ int main() {
     }
     return 0;
 }
-  // } Driver Code Ends
+
+// } Driver Code Ends
