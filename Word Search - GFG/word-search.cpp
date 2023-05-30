@@ -5,38 +5,42 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
 public:
-int dx[4]={-1,0,1,0};
-int dy[4]={0,1,0,-1};
-bool dfs(int r,int c,vector<vector<int>>&vis,vector<vector<char>>& board,string word,int ind)
-{
-    int n=board.size();
-    int m=board[0].size();
-    if(ind==word.size()) return true;
-    if(r<0||r>=n||c<0||c>=m||vis[r][c]==1||board[r][c]!=word[ind]) return false;
-
-    vis[r][c]=1;
-    for(int i=0;i<4;i++)
-    {
-        int nr=r+dx[i];
-        int nc=c+dy[i];
-        if(dfs(nr,nc,vis,board,word,ind+1)) return true;
-    } vis[r][c]=0;
-    return false;
-}
+  vector<int> dx={1,-1,0,0};
+    vector<int> dy={0,0,1,-1};
+    bool dfs(vector<vector<char>> &board, int x, int y, string &word, int idx){
+           int n=board.size(), m=board[0].size();
+        if(idx==word.length()){
+            return true;
+        }
+        if(word[idx]!=board[x][y]){
+            return false;
+        }
+        char temp=board[x][y];
+        board[x][y]='/';
+        for(int i=0;i<4;i++){
+            int nx=x+dx[i], ny=y+dy[i];
+            
+            if(nx>=0 && ny>=0 && nx<board.size() && ny<board[0].size() && dfs(board,nx,ny,word,idx+1)){
+                board[x][y]=temp;
+                return true;
+            }
+        }
+        board[x][y]=temp;
+        return false;
+    }
     bool isWordExist(vector<vector<char>>& board, string word) {
         // Code here
-        vector<vector<int>>vis(board.size(),vector<int>(board[0].size(),0));
-        for(int i=0;i<board.size();i++)
-        {
-            //vector<vector<int>>v(board.size(),vector<int>(board[0].size(),0));
-          for(int j=0;j<board[0].size();j++)
-          {//vector<vector<int>>vis(board.size(),vector<int>(board[0].size(),0));
-          
-              if((board[i][j]==word[0])&&dfs(i,j,vis,board,word,0)) return true;
-              
-          }
+          int n=board.size(), m=board[0].size();
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(dfs(board,i,j,word,0)){
+                    return true;
+                }
+            }
         }
-       return false;
+        
+        return false;
     }
 };
 
