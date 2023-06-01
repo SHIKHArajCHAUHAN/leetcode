@@ -3,6 +3,7 @@ public:
     vector<int> findRedundantConnection(vector<vector<int>>& edges) {
         int n=edges.size();
      vector<int>ds(n+1);
+        vector<int>rank(n+1,1);
         for(int i=0;i<=n;i++)
         {
             ds[i]=i;
@@ -13,12 +14,24 @@ public:
             int e2=v[1];
             int p1=findpar(e1,ds);
             int p2=findpar(e2,ds);
-            if(p1==p2)     return v;
-            else
+         if(p1==p2)     return v;
+            // else
+            // {
+            //     ds[p2]=p1;
+            // }
+          else{  if(rank[p1]<rank[p2])
+            {
+                ds[p1]=p2;
+            }
+            else if(rank[p1]>rank[p2])
             {
                 ds[p2]=p1;
             }
-            
+           else {
+               ds[p1]=p2;
+                rank[p2]++;
+           } 
+              }  
         }
         return {};
     }
