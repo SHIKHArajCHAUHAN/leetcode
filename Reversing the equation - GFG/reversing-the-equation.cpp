@@ -3,35 +3,27 @@
 using namespace std;
 
 // } Driver Code Ends
-
 class Solution
 {
   public:
     string reverseEqn (string s)
         {
             //code here.
-       stack<string>st;
-       string str="";
-       for(int i=0;i<s.length();i++)
-       {
-           char ch=s[i];
-                   if(ch!='+' && ch!='-' && ch!='*' && ch!='/')
-                   {
-                       str+=ch;
-                   }
-                   else
-                   {
-                       st.push(str);
-                       st.push(string(1,ch));
-                       str="";
-                   }
-       }
-       st.push(str);str="";
-       while(!st.empty())
-{
-    str+=st.top();st.pop();
-} 
-return str;
+             int len = s.length();
+            string ans="";
+            string temp = "";
+            for(int i=0;i<len;i++){
+                
+                if(s[i]=='+' || s[i]=='-' || s[i]=='*' || s[i]=='/'){
+                      ans = s[i]+temp+ans;
+                      temp="";
+                }
+                else temp = temp+s[i];
+            }
+            if(temp.length()!=0){
+                ans=temp+ans;
+            }
+            return ans;
         }
 };
 
