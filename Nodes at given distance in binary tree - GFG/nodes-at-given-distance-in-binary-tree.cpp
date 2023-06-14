@@ -133,15 +133,16 @@ private:
         getTargetNode(root, target);
       q.push(targetNode);
         vis[targetNode] = true;
-        
-        vector<vector<int>>radialTraversal;
+        vector<int>ans;
+    
         vector<int> res;
         int currLevel = 0;
         
         while(!q.empty()){
             int size = q.size();
+            if(currLevel==k)break;
             currLevel++;
-            vector<int> radialLevel;
+           
             for(int i = 0 ; i < size ; i++){
                 Node* currNode = q.front(); q.pop();
                 
@@ -161,12 +162,18 @@ private:
                     vis[par[currNode]] = 1;
                 }
                 
-                radialLevel.push_back(currNode -> data);
+               
             }
-            radialTraversal.push_back(radialLevel);
+          
         }
-        sort(radialTraversal[k].begin(), radialTraversal[k].end());
-        return k < radialTraversal.size() ? radialTraversal[k] : res;
+       while(!q.empty())
+       {
+           auto x=q.front();
+           ans.push_back(x->data);
+           q.pop();
+       }
+       sort(ans.begin(),ans.end());
+       return ans;
     }
 };
 
