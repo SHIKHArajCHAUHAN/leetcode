@@ -7,18 +7,20 @@ using namespace std;
 
 class Solution {
   public:
-    int maxDiamonds(int A[], int N, int K) {
+    long long maxDiamonds(int A[], int N, int K) {
         // code here
-        priority_queue<int,vector<int>>pq(A,A+N);
-        int ans=0;
-        for(int i=0;i<K;i++)
-        {
-            int a=pq.top();
-            ans+=a;
-            pq.pop();
-            pq.push(a/2);
+         long long count=0;
+        priority_queue<int> pq;
+        for(int i=0;i<N;i++){
+            pq.push(A[i]);
         }
-        return ans;
+        for(int i=0;i<K;i++) {
+            long long top=pq.top();
+            pq.pop();
+            count=count+top;
+            pq.push(top/2);
+        }
+        return count;
     }
 };
 
