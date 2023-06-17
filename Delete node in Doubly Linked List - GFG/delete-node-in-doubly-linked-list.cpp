@@ -40,31 +40,27 @@ class Solution
     public:
     Node* deleteNode(Node *head_ref, int x)
     {
-       Node* temp=head_ref;
-
-      if(temp==NULL or temp->next==NULL){
-
-          return NULL;
-      }
+      //Your code here
+      
+      Node *temp=head_ref;
+      
       if(x==1){
-
+          head_ref->next->prev=NULL;
           temp=temp->next;
-
-          temp->prev=NULL;
-
           return temp;
       }
-      temp=head_ref;
-
-      for(int i=0;i<x-1 and temp!=NULL;i++){
-          temp=temp->next;}
+      
+      while(--x){
+          temp=temp->next;
+      }
+      
       temp->prev->next=temp->next;
-
-      delete(temp);
-
+      
+      if(temp->next!=NULL){
+          temp->next->prev=temp->prev;
+      }
+      
       return head_ref;
-      
-      
     }
 };
 
