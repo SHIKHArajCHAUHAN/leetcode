@@ -10,8 +10,8 @@ class Solution {
         int cnt=0;
         while(N)
         {
-            int rsbm=N&-N;
-            N-=rsbm;
+            int rmsb=N&-N;
+            N-=rmsb;
             cnt++;
         }
         return cnt;
