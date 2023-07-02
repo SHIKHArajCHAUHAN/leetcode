@@ -9,7 +9,7 @@ class Solution{
     public:
     int setSetBit(int x, int y, int l, int r){
         // code here
-        for(int i=l;i<=r;i++)
+          for(int i=l;i<=r;i++)
         {
             int temp=(1<<(i-1))&y;
             x|=temp;
