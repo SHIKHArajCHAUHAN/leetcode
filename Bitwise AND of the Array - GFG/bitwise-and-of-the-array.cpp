@@ -10,7 +10,7 @@ class Solution{
     int count(int N, vector<int> A,int X)
     {
         // code here
-          int setBit=0,minn=INT_MAX;
+         int setBit=0,minn=INT_MAX;
         for(int i=30;i>=0;i--){
             if(((1<<i)&X)>0){
                 setBit|=1<<i;
@@ -27,7 +27,6 @@ class Solution{
             }
         }
         return minn;
-        
     }
 };
 
