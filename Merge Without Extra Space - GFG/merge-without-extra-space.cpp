@@ -10,7 +10,7 @@ class Solution{
         void merge(long long arr1[], long long arr2[], int n, int m) 
         { 
             // code here 
-             int j=n-1,i=0;
+                  int j=n-1,i=0;
     while(j>=0&&i<m)
     {
         if(arr1[j]>arr2[i])
